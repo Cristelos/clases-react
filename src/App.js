@@ -6,6 +6,10 @@ import HelloWorld from './components/HelloWorld';
 import ToDoList from './components/ToDoList';
 import TodoAdd from './components/TodoAdd';
 import Form from './components/Form';
+import AnimeFetch from './components/AnimeFetch';
+import Anime from './components/Anime';
+
+// import QueryForm from './components/QueryForm';
 
 function App() {
   const msg = {
@@ -26,6 +30,14 @@ function App() {
 
        <h1>Formulario</h1>
        <Form></Form>
+
+       <h1>Anime Fetch</h1>
+       <AnimeFetch/>
+
+       <h1>Animes</h1>
+      <Anime></Anime>
+      
+       <br/>
       </header>
     </div>
   );

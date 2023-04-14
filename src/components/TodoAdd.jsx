@@ -6,10 +6,15 @@ export default function TodoAdd() {
 
 
     const [todo, setTodo] = useState(todoList);
+    const[newTask, setNewTask] = useState("");
+
+    const handelInputChange = (e) => {
+      setNewTask(e.target.value)
+    }
 
     const addNew = () => {
         const copyTodo = [...todo];
-        copyTodo.push({ name: "New group", isDone: false })
+        copyTodo.push({ name: newTask, isDone: false })
         setTodo(copyTodo)
     }
     return (
@@ -17,6 +22,7 @@ export default function TodoAdd() {
       <ul>
         {todo.map((list,index) => <li key={index}>{list.name}</li>)}
       </ul>
+      <input type="text" name="tarea" value={newTask} onChange={handelInputChange}/>
       <button onClick={addNew}>Añadir nuevo elemento</button>
       </div>
     );

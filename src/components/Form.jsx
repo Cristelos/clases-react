@@ -7,13 +7,20 @@ export default function Form() {
         e.preventDefault();
         console.log(1);
     }
+
+    const handleChange = (e) => {
+        setState({...state, [e.target.name]: e.target.value})
+    }
     
     return (
        <div>
             <form onSubmit={handleSubmit}>
-                <input type="text" onChange={(e) => setState({...state, name: e.target.value})} placeholder='Nombre'/>
-                <input type="text" onChange={(e) => setState({...state, surname: e.target.value})} placeholder='Apellidos'/>
-                <input type="tel" onChange={(e) => setState({...state, phone: e.target.value})} placeholder='Teléfono'/>
+                <input type="text" onChange={handleChange} name="name" placeholder='Nombre'/> 
+
+                <input type="text" onChange={handleChange} name="surname" placeholder='Apellidos'/>
+
+                <input type="tel"  onChange={handleChange} name="phone" placeholder='Teléfono'/>
+
                 <button>Enviar</button>
             </form>
       </div>
